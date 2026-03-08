@@ -7,17 +7,17 @@ writer.writerow(["Name","ID","Dependents","Hours","Rate","Gross Pay","State Tax"
 
 employees = []
 
-for i in range(10):
-    print("Enter data for employee", i+1)
-
-    name = input("Name: ")
+while True:
+    name = input("Enter employee name (or 'done' to finish): ")
+    if name.lower() == 'done':
+        break
     emp_id = input("ID: ")
     dependents = int(input("Dependents: "))
     hours = float(input("Hours worked: "))
     rate = float(input("Hourly rate: "))
 
     employees.append([name, emp_id, dependents, hours, rate])
-    
+
 for emp in employees:
 
     name = emp[0]
