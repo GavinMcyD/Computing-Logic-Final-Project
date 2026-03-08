@@ -1,22 +1,23 @@
 import csv
 
-employees = [
-["Sarah Colin",14569,0,40,20],
-["Anna Johnson",14572,0,40,22],
-["Jessica Dean",14580,3,40,18],
-["Taylor Cane",14528,1,40,16],
-["Jackson Davis",14530,0,60,16],
-["Austin Joan",14532,2,40,16],
-["Nathan Lee",14582,0,40,16],
-["Bailey Walt",14563,0,50,22],
-["Brittney Greene",14520,4,40,18],
-["Leann Clancy",14519,0,50,22]
-]
 file = open("payroll_results.csv","w",newline="")
 writer = csv.writer(file)
 
 writer.writerow(["Name","ID","Dependents","Hours","Rate","Gross Pay","State Tax","Federal Tax","Pre-Tax","Post-Tax"])
 
+employees = []
+
+for i in range(10):
+    print("Enter data for employee", i+1)
+
+    name = input("Name: ")
+    emp_id = input("ID: ")
+    dependents = int(input("Dependents: "))
+    hours = float(input("Hours worked: "))
+    rate = float(input("Hourly rate: "))
+
+    employees.append([name, emp_id, dependents, hours, rate])
+    
 for emp in employees:
 
     name = emp[0]
